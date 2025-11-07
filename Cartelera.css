@@ -1,0 +1,270 @@
+:root{
+  --bg:#0f0f11;
+  --card:#16181d;
+  --brand:#c8102e;
+  --muted:#b5b8be;
+  --ink:#f2f4f7;
+  --gold:#FFD700;
+  --yellow:#FFFF00;
+}
+
+
+/* NAVBAR */
+.navbar{ background: rgba(15,15,17,.92); backdrop-filter: blur(8px); }
+.navbar-brand{ color: var(--ink); font-weight:700 }
+.nav-link{ color: var(--muted) }
+.nav-link:hover, .nav-link.active{ color: var(--ink) }
+.btn-brand{ background: var(--brand); color:#fff; border:none }
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Cantarell, "Helvetica Neue", Arial;
+  margin:0;
+}
+
+
+
+/* ==== General ==== */
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar{
+  background: rgba(15,15,17,.92);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-brand .dot{
+  color: #fff; 
+}
+
+.gold-text{
+  color: var(--gold);
+}
+
+.classification{
+  color: var(--yellow);
+}
+
+footer{
+  background: #121212;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ====== CARRUSEL ====== */
+#mainCarousel {
+  margin-top: 56px; /* Altura de navbar */
+}
+
+.carousel-item {
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.carousel-caption p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+}
+
+/* ==== Movie Cards ==== */
+.movie-item{
+  background: var(--card);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,.5);
+  transition: transform .3s ease, box-shadow .3s ease;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
+.movie-item:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.7);
+}
+
+.movie-img{
+  flex: 0 0 35%;
+}
+
+.movie-img img{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.movie-info{
+  flex: 1;
+  padding: 1rem 1.5rem;
+}
+
+.schedule .btn-time{
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--ink);
+  margin: .2rem;
+  border-radius: .5rem;
+  transition: all .2s ease;
+  font-size: 0.9rem;
+}
+
+.schedule .btn-time:hover{
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ==== Offcanvas ==== */
+.offcanvas{
+  background: var(--card);
+  color: var(--ink);
+}
+
+.offcanvas .form-select,
+.offcanvas .form-control{
+  background: #1d1f23;
+  color: var(--ink);
+  border: 1px solid #333;
+}
+
+.offcanvas .btn-primary{
+  background: var(--brand);
+  border: none;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 992px) {
+  .movie-item{
+    flex-direction: column;
+  }
+
+  .movie-img{
+    flex: 0 0 100%;
+    margin-bottom: 1rem;
+  }
+
+  .movie-img img{
+    height: 220px;
+  }
+
+  .movie-info{
+    padding: 1rem;
+  }
+
+  .schedule .btn-time{
+    flex: 1 1 30%;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .movie-img img{
+    height: 180px;
+  }
+
+  .schedule .btn-time{
+    flex: 1 1 45%;
+    font-size: 0.8rem;
+  }
+
+  .movie-info{
+    padding: 0.8rem;
+  }
+}
+
+
+
+/* css del boton mas informacion*/
+
+.movie-info {
+  position: relative; /* necesario para que el botón absoluto funcione */
+}
+
+.btn-right {
+  position: absolute;
+  bottom: 1rem;  /* distancia desde abajo */
+  right: 1rem;   /* distancia desde la derecha */
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border-radius: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-right:hover {
+  background: #c8102ecc; /* ligeramente más oscuro al pasar el mouse */
+  transform: scale(1.05);
+}
+
+
+/* Footer correcciones*/
+footer {
+  background: #121212;
+  color: #f2f4f7;
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+footer .footer-text {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+footer .small {
+  color: var(--muted);
+}
+
+footer .social-btn {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: var(--brand);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+footer .social-btn:hover {
+  color: #ffd166;
+  transform: scale(1.3);
+}
+
+@media (max-width: 992px) {
+  footer .social-btn {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+  }
+}

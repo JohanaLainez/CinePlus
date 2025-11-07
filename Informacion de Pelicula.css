@@ -6,6 +6,7 @@
   --ink:#f2f4f7;
 }
 
+
 /* NAVBAR */
 .navbar{ background: rgba(15,15,17,.92); backdrop-filter: blur(8px); }
 .navbar-brand{ color: var(--ink); font-weight:700 }
@@ -20,7 +21,7 @@ body{
   margin:0;
 }
 
- 
+
  /* ======== SECCIONES DE PELÍCULA ======== */
 .movie-section {
   margin-bottom: 80px;
@@ -72,4 +73,83 @@ body{
 .btn-outline-warning:hover {
   background-color: #ffc107;
   color: #000;
+}
+
+
+/* ====== CARRUSEL ====== */
+#mainCarousel {
+  margin-top: 56px; /* Altura de navbar */
+}
+
+.carousel-item {
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-item .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f8f9fa;
+}
+
+.carousel-caption p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+
+/* Footer correcciones*/
+footer {
+  background: #121212;
+  color: #f2f4f7;
+  font-size: 0.9rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+footer .footer-text {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+footer .small {
+  color: var(--muted);
+}
+
+footer .social-btn {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: var(--brand);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+footer .social-btn:hover {
+  color: #ffd166;
+  transform: scale(1.3);
+}
+
+@media (max-width: 992px) {
+  footer .social-btn {
+    font-size: 1.4rem;
+    margin: 0.3rem;
+  }
 }

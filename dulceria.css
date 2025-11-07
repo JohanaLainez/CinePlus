@@ -82,26 +82,6 @@ body.dulceria-page {
   border-radius: .75rem; padding:.35rem .7rem; 
 }
 
-.site-footer{
-  margin-top: 40px;
-  padding: 36px 0;
-  background: linear-gradient(180deg, #111315 0%, #0b0c0e 100%);
-  border-top: 1px solid var(--dc-border);
-}
-.site-footer .navbar-brand{ font-weight:700; }
-.site-footer .dot{ color: var(--dc-accent); }
-.site-footer h6{ font-weight:600; color: var(--dc-ink); }
-.site-footer .btn-icon{
-  width:40px; height:40px; display:grid; place-items:center;
-  border:1px solid var(--dc-border); border-radius:10px;
-  color:#fff; background: rgba(255,255,255,.05);
-}
-.site-footer .btn-icon:hover{
-  border-color: rgba(255,255,255,.25);
-  transform: translateY(-2px);
-  transition:.18s;
-}
-
 
 .dc-item{
   display: grid;
@@ -142,5 +122,32 @@ body.dulceria-page {
   border-top: 1px solid var(--dc-border);
   padding: .6rem 0;
   z-index: 1050;
+}
+
+/* ===== Footer ===== */
+footer{
+  background:#121212;
+  color: var(--dc-ink);
+  font-size:.9rem;
+  padding:1.5rem 0;
+}
+footer .footer-text{
+  font-weight:500;
+  font-size:1rem;
+  color: var(--dc-ink);
+}
+footer .small{
+  color: var(--dc-muted);
+}
+footer .social-btn{
+  display:inline-block;
+  margin:0 .5rem;
+  color: var(--dc-brand);           
+  font-size:1.5rem;
+  transition:all .3s ease;
+}
+footer .social-btn:hover{
+  color: var(--dc-accent);          
+  transform: scale(1.3);
 }
 
