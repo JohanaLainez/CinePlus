@@ -1,0 +1,223 @@
+:root{
+  --bg:#0f0f11;
+  --card:#16181d;
+  --brand:#c8102e;
+  --muted:#b5b8be;
+  --ink:#f2f4f7;
+}
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Cantarell, "Helvetica Neue", Arial;
+  margin:0;
+}
+
+/* NAVBAR */
+.navbar{ background: rgba(15,15,17,.92); backdrop-filter: blur(8px); }
+.navbar-brand{ color: var(--ink); font-weight:700 }
+.nav-link{ color: var(--muted) }
+.nav-link:hover, .nav-link.active{ color: var(--ink) }
+.btn-brand{ background: var(--brand); color:#fff; border:none }
+
+/* --- HERO CARRUSEL --- */
+.hero { padding: 0; background: transparent; border: 0; }  
+.hero-carousel .carousel-item{ height:70vh; min-height:420px; }
+.hero-carousel .carousel-item img{
+  height:100%; width:100%; object-fit:cover; filter: brightness(.68);
+  display:block;
+}
+.hero-carousel{ position: relative; }
+.hero-carousel::after{            
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.55));
+  pointer-events:none;
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  display:grid; place-items:center;
+  text-align:center; padding:2rem;
+}
+
+/* Tarjetas y textos */
+.card{ background: var(--card); border:1px solid rgba(255,255,255,.06); color: var(--ink); }
+.section-title{ font-weight:700; margin: 72px 0 8px; }
+.section-sub{ color: var(--muted); margin-bottom: 24px; }
+.badge-genre{ background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); color:var(--ink) }
+.price{ color:#ffd166; font-weight:700 }
+footer{ border-top:1px solid rgba(255,255,255,.06); color: var(--muted) }
+
+/* ====== PROMOS con IMAGEN (estilos agregados) ====== */
+
+/* Contenedor de imagen responsiva */
+.promo-card .promo-thumb{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  /* Proporción agradable para tarjetas horizontales; se adapta bien a 1/2/4 columnas */
+  aspect-ratio: 16 / 10;              /* Navegadores modernos */
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+}
+.promo-card .promo-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                   /* Recorta sin deformar */
+  display: block;
+  transition: transform .35s ease, filter .35s ease;
+  filter: saturation(1.02) contrast(1.02) brightness(.98);
+}
+
+/* Badge sobre la imagen */
+.promo-card .promo-thumb .promo-badge{
+  position: absolute;
+  left: .75rem;
+  top: .75rem;
+  z-index: 2;
+}
+
+/* Cuerpo del contenido */
+.promo-card .p-3{ padding: .9rem !important; }
+.promo-card .card-title{ margin: .6rem 0 .25rem; }
+
+/* Hover sutil (imagen hace zoom y tarjeta se eleva) */
+.promo-card{
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  border-radius: 16px;
+}
+.promo-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+  border-color: rgba(255,255,255,.18);
+}
+.promo-card:hover .promo-thumb img{
+  transform: scale(1.05);
+  filter: saturation(1.05) contrast(1.05) brightness(1);
+}
+
+/* Ajustes en carrusel ya existentes */
+.promo-carousel .carousel-item{ padding: .25rem 0 1rem; }
+.promo-carousel .carousel-control-prev,
+.promo-carousel .carousel-control-next{
+  width: 3rem; height: 3rem;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+}
+.promo-carousel .carousel-control-prev:hover,
+.promo-carousel .carousel-control-next:hover{ background: rgba(255,255,255,.15); }
+.promo-carousel .carousel-control-prev-icon,
+.promo-carousel .carousel-control-next-icon{ filter: invert(1) grayscale(1); }
+
+/* Espaciados y separadores (igual que antes) */
+#promos .section-title{ margin-top: 72px; }
+#promos .section-sub{ margin-bottom: 28px; }
+.promo-block + .promo-block{ padding-top: 8px; border-top: 1px solid rgba(255,255,255,.06); }
+
+/* Responsive: 1/2/4 tarjetas por slide y proporciones de imagen */
+@media (max-width: 575.98px){
+  .promo-carousel .row > [class*="col-"]{ flex: 0 0 100%; max-width: 100%; }
+  .promo-card .promo-thumb{ aspect-ratio: 16 / 11; } /* un poco más alto en móvil */
+}
+@media (min-width: 576px) and (max-width: 991.98px){
+  .promo-carousel .row > [class*="col-"]{ flex: 0 0 50%; max-width: 50%; }
+  .promo-card .promo-thumb{ aspect-ratio: 16 / 10; }
+}
+@media (min-width: 992px){
+  .promo-carousel .row > [class*="col-"]{ flex: 0 0 25%; max-width: 25%; }
+  .promo-card .promo-thumb{ aspect-ratio: 16 / 10; }
+}
+
+/* ====== COLOR ROJO MÁS CLARO EN LOS TÍTULOS + HOVER ====== */
+
+/* Color base del título */
+#promos .card-title {
+  color: #ff3b4a;              /* rojo más claro y vibrante */
+  transition: color 0.3s ease; /* transición suave */
+}
+
+/* Efecto al pasar el mouse */
+#promos .card:hover .card-title {
+  color: #ff626e; /* tono un poco más brillante al hacer hover */
+}
+
+
+
+/* =========================================================
+   ============ (AÑADIDO AL FINAL) ===================
+   Accesibilidad, estados de foco y mejoras opcionales /*
+
+
+/* Foco visible para navegación y botones (accesibilidad) */
+.btn-brand:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.nav-link:focus-visible{
+  outline: 2px dashed #fff;
+  outline-offset: 2px;
+}
+.carousel-control-prev:focus-visible,
+.carousel-control-next:focus-visible{
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+
+/* Estado hover/focus para el botón de marca (feedback más notorio) */
+.btn-brand:hover,
+.btn-brand:focus{
+  filter: brightness(1.05);
+  box-shadow: 0 6px 18px rgba(200,16,46,.35);
+}
+
+/* Reduce motion (usuarios con preferencia de menos animación) */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hit area un poco mayor para controles del carrusel en desktop */
+@media (min-width: 992px){
+  .promo-carousel .carousel-control-prev,
+  .promo-carousel .carousel-control-next{
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
+
+/* === AJUSTE PARA QUE LAS IMÁGENES SE VEAN MÁS ALTAS === */
+.promo-card .promo-thumb {
+  aspect-ratio: unset;          
+  height: 260px;               
+  overflow: hidden;             
+}
+
+.promo-card .promo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            
+  object-position: center;      
+}
+
+@media (max-width: 575.98px) {
+  .promo-card .promo-thumb {
+    height: 200px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .promo-card .promo-thumb {
+    height: 240px;
+  }
+}
+
+@media (min-width: 992px) {
+  .promo-card .promo-thumb {
+    height: 280px;
+  }
+}

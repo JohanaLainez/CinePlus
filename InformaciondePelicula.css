@@ -1,0 +1,75 @@
+:root{
+  --bg:#0f0f11;
+  --card:#16181d;
+  --brand:#c8102e;
+  --muted:#b5b8be;
+  --ink:#f2f4f7;
+}
+
+/* NAVBAR */
+.navbar{ background: rgba(15,15,17,.92); backdrop-filter: blur(8px); }
+.navbar-brand{ color: var(--ink); font-weight:700 }
+.nav-link{ color: var(--muted) }
+.nav-link:hover, .nav-link.active{ color: var(--ink) }
+.btn-brand{ background: var(--brand); color:#fff; border:none }
+
+body{
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Cantarell, "Helvetica Neue", Arial;
+  margin:0;
+}
+
+ 
+ /* ======== SECCIONES DE PELÍCULA ======== */
+.movie-section {
+  margin-bottom: 80px;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 50px;
+}
+
+.movie-title {
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.movie-card {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.1);
+  padding: 30px;
+}
+
+.movie-card p,
+.movie-card ul li {
+  color: #b5b8be; 
+}
+
+
+.ratio {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ======== BOTONES ======== */
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: 500;
+}
+
+.btn-warning:hover {
+  background-color: #ffca2c;
+}
+
+.btn-outline-warning {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+}

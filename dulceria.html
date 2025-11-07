@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dulcería | CinePlus</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Estilos Dulcería -->
+  <link rel="stylesheet" href="dulceria.css">
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="dulceria-page">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="CinePlus_completo.html">Cine<span class="dot">Plus</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="Informacion%20de%20Pelicula.html#cartelera">Cartelera</a></li>
+          <li class="nav-item"><a class="nav-link" href="estrenos.html#estrenos.html">Próximos estrenos</a></li>
+          <li class="nav-item"><a class="nav-link" href="CinePlusPromo.html">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link active" href="dulceria.html">Dulcería</a></li>
+          <li class="nav-item"><a class="nav-link" href="CinePlus_completo.html#historia">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="CinePlus_completo.html#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand btn-sm" href="Informacion%20de%20Pelicula.html#cartelera">Comprar boletos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO Dulcería (con tu imagen local) -->
+<header class="dc-hero">
+  <div class="dc-hero__bg" style="background-image:linear-gradient(180deg,rgba(15,15,17,.55),rgba(15,15,17,.75)), url('img/dc-hero.jpg');"></div>
+  <div class="container dc-hero__inner text-center">
+    <h1 class="display-5 fw-bold">Dulcería CinePlus</h1>
+    <p class="lead mb-4">Combos recién hechos, bebidas heladas y tus snacks favoritos.</p>
+
+    <!-- Filtros -->
+    <div class="dc-filters nav nav-pills justify-content-center gap-2" role="tablist">
+      <button class="btn btn-pill active" data-filter="all">Todo</button>
+      <button class="btn btn-pill" data-filter="palomitas">Palomitas</button>
+      <button class="btn btn-pill" data-filter="nachos">Nachos</button>
+      <button class="btn btn-pill" data-filter="hotdogs">Hotdogs</button>
+      <button class="btn btn-pill" data-filter="bebidas">Bebidas</button>
+      <button class="btn btn-pill" data-filter="dulces">Dulces</button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== BARRA DE CARRITO ====== -->
+<div id="cartbar" class="cartbar d-none">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <strong id="cart-count">0</strong> ítem(s) • Total: <strong id="cart-total">$ 0.00</strong>
+    </div>
+    <div class="d-flex gap-2">
+      <button id="cart-clear" class="btn btn-outline-light btn-sm">Vaciar</button>
+      <button class="btn btn-brand btn-sm" data-bs-toggle="modal" data-bs-target="#cartModal">Revisar pedido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ====== MODAL RESUMEN ====== -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content dc-modal">
+      <div class="modal-header">
+        <h5 class="modal-title">Tu pedido</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="cart-list" class="list-group list-group-flush mb-3"></ul>
+        <div class="d-flex justify-content-between">
+          <strong>Total:</strong>
+          <strong id="cart-total-modal">$ 0.00</strong>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="cart-confirm" class="btn btn-brand">Confirmar compra</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== CONTENIDO ====== -->
+<main class="py-5">
+  <div class="container">
+    <!-- GRID DE PRODUCTOS -->
+    <div class="row g-4" id="dc-grid">
+
+      <!-- ===== PALOMITAS ===== -->
+
+      <!-- Combo Personal (usa tus archivos locales) -->
+      <div class="col-12 col-sm-6 col-lg-4 dc-col" data-category="palomitas">
+        <article class="dc-card dc-item" data-id="combo-personal" data-name="Combo Personal" data-price="8.00">
+          <div class="dc-imgwrap">
+            <img
+              src="img/combopersonal.png"
+              srcset="img/combopersonal.png,
+                      img/combopersonal.png,
+                      img/combopersonal.png"
+              sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 33vw"
+              alt="Combo Personal (popcorn + soda)"
+              loading="lazy" class="dc-img" width="960" height="720"/>
+            <span class="dc-badge">Popular</span>
+          </div>
+          <div class="dc-body">
+            <h5 class="dc-title">Combo Personal</h5>
+            <p class="dc-desc">Popcorn mediano 55g + soda mediana 621ml.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="dc-price">$ 8.00</div>
+              <div class="dc-qty">
+                <button class="btn minus" type="button" aria-label="Restar">−</button>
+                <span class="value">0</span>
+                <button class="btn plus" type="button" aria-label="Sumar">+</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Combo Plus -->
+      <div class="col-12 col-sm-6 col-lg-4 dc-col" data-category="palomitas">
+        <article class="dc-card dc-item" data-id="combo-plus" data-name="Combo Plus" data-price="10.99">
+          <div class="dc-imgwrap">
+            <img
+              src="img/comboplus.png"
+              srcset="img/comboplus.png,
+                      img/comboplus.png,
+                      img/comboplus.png"
+              sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 33vw"
+              alt="Combo Plus con refill"
+              loading="lazy" class="dc-img" width="960" height="720"/>
+            <span class="dc-badge dc-badge--accent">Refill</span>
+          </div>
+          <div class="dc-body">
+            <h5 class="dc-title">Combo Plus</h5>
+            <p class="dc-desc">Pop grande 105g con refill + 2 sodas medianas 946ml.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="dc-price">$ 10.99</div>
+              <div class="dc-qty">
+                <button class="btn minus" type="button" aria-label="Restar">−</button>
+                <span class="value">0</span>
+                <button class="btn plus" type="button" aria-label="Sumar">+</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== NACHOS ===== -->
+      <div class="col-12 col-sm-6 col-lg-4 dc-col" data-category="nachos">
+        <article class="dc-card dc-item" data-id="combo-nacho" data-name="Combo Nacho" data-price="13.90">
+          <div class="dc-imgwrap">
+            <img
+              src="img/nachos.png"
+              srcset="img/nachos.png,
+                      img/nachos.png,
+                      img/nachos.png"
+              sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 33vw"
+              alt="Combo Nacho"
+              loading="lazy" class="dc-img" width="960" height="720"/>
+            <span class="dc-badge">Combo</span>
+          </div>
+          <div class="dc-body">
+            <h5 class="dc-title">Combo Nacho</h5>
+            <p class="dc-desc">Nachos 140g + soda mediana 621ml + popcorn mediano 55g.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="dc-price">$ 13.90</div>
+              <div class="dc-qty">
+                <button class="btn minus" type="button" aria-label="Restar">−</button>
+                <span class="value">0</span>
+                <button class="btn plus" type="button" aria-label="Sumar">+</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== HOTDOGS ===== -->
+      <div class="col-12 col-sm-6 col-lg-4 dc-col" data-category="hotdogs">
+        <article class="dc-card dc-item" data-id="combo-hotdog" data-name="Combo Hotdog" data-price="20.99">
+          <div class="dc-imgwrap">
+            <img
+              src="img/hotdog.png"
+              srcset="img/hotdog.png,
+                      img/hotdog.png,
+                      img/hotdog.png"
+              sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 33vw"
+              alt="Combo Hotdog"
+              loading="lazy" class="dc-img" width="960" height="720"/>
+            <span class="dc-badge">Max</span>
+          </div>
+          <div class="dc-body">
+            <h5 class="dc-title">Combo Hotdog</h5>
+            <p class="dc-desc">Hotdog 115g + soda mediana 621ml + nachos 140g + popcorn mediano 55g.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="dc-price">$ 20.99</div>
+              <div class="dc-qty">
+                <button class="btn minus" type="button" aria-label="Restar">−</button>
+                <span class="value">0</span>
+                <button class="btn plus" type="button" aria-label="Sumar">+</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== BEBIDAS ===== -->
+      <div class="col-12 col-sm-6 col-lg-4 dc-col" data-category="bebidas">
+        <article class="dc-card dc-item" data-id="bebida-grande" data-name="Bebida Grande" data-price="2.25">
+          <div class="dc-imgwrap">
+            <img
+              src="img/Bebidas.png"
+              srcset="img/Bebidas.png,
+                      img/Bebidas.png,
+                      img/Bebidas.png"
+              sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 33vw"
+              alt="Refresco Grande"
+              loading="lazy" class="dc-img" width="960" height="720"/>
+            <span class="dc-badge">Frío</span>
+          </div>
+          <div class="dc-body">
+            <h5 class="dc-title">Bebida Grande</h5>
+            <p class="dc-desc">Varios sabores. Hielo opcional.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="dc-price">$ 2.25</div>
+              <div class="dc-qty">
+                <button class="btn minus" type="button" aria-label="Restar">−</button>
+                <span class="value">0</span>
+                <button class="btn plus" type="button" aria-label="Sumar">+</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== DULCES ===== -->
+      <div class="col-12 col-sm-6 col-lg-4 dc-col" data-category="dulces">
+        <article class="dc-card dc-item" data-id="chocolate" data-name="Chocolate" data-price="1.50">
+          <div class="dc-imgwrap">
+            <img
+              src="img/chocolate.png"
+              srcset="img/chocolate.png,
+                      img/chocolate.png,
+                      img/chocolate.png"
+              sizes="(max-width:576px) 100vw, (max-width:992px) 50vw, 33vw"
+              alt="Chocolate"
+              loading="lazy" class="dc-img" width="960" height="720"/>
+            <span class="dc-badge">Dulce</span>
+          </div>
+          <div class="dc-body">
+            <h5 class="dc-title">Chocolate</h5>
+            <p class="dc-desc">Barra de chocolate premium.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="dc-price">$ 1.50</div>
+              <div class="dc-qty">
+                <button class="btn minus" type="button" aria-label="Restar">−</button>
+                <span class="value">0</span>
+                <button class="btn plus" type="button" aria-label="Sumar">+</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div> <!-- /row -->
+  </div>
+</main>
+
+ <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-12 col-md-4">
+          <a class="navbar-brand mb-2 d-inline-block" href="CinePlus_completo.html">Cine<span class="dot">Plus</span></a>
+          <p class="small text-secondary mb-0">© <span id="y"></span> CinePlus · Todos los derechos reservados</p>
+        </div>
+        <div class="col-12 col-md-4">
+          <h6 class="mb-2">Contacto</h6>
+          <ul class="list-unstyled small text-secondary mb-0">
+            <li><i class="bi bi-geo-alt"></i> Calle Los Sisimiles, San Salvador</li>
+            <li><i class="bi bi-telephone"></i> (503) 2261 2001</li>
+            <li><i class="bi bi-envelope"></i> tucine@cineplus.sv</li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4">
+          <h6 class="mb-2">Síguenos</h6>
+          <div class="d-flex gap-2">
+            <a class="btn btn-icon" href="#"><i class="bi bi-facebook"></i></a>
+            <a class="btn btn-icon" href="#"><i class="bi bi-instagram"></i></a>
+            <a class="btn btn-icon" href="#"><i class="bi bi-tiktok"></i></a>
+            <a class="btn btn-icon" href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+
+  <script>
+  (() => {
+    const fmt = n => '$ ' + n.toFixed(2);
+    let cart = JSON.parse(localStorage.getItem('cineplus_cart') || '{}');
+
+    const bar = document.getElementById('cartbar');
+    const elCount = document.getElementById('cart-count');
+    const elTotal = document.getElementById('cart-total');
+    const elTotalModal = document.getElementById('cart-total-modal');
+    const list = document.getElementById('cart-list');
+
+    const save = () => localStorage.setItem('cineplus_cart', JSON.stringify(cart));
+    const totals = () => {
+      let count = 0, total = 0;
+      Object.values(cart).forEach(p => { count += p.qty; total += p.qty * p.price; });
+      return {count, total};
+    };
+
+    function syncQuantitiesFromDOM(){
+      document.querySelectorAll('.dc-item').forEach(item => {
+        const id = item.dataset.id;
+        const qty = cart[id]?.qty || 0;
+        const valueEl = item.querySelector('.dc-qty .value');
+        if(valueEl) valueEl.textContent = qty;
+      });
+    }
+
+    function renderBar(){
+      const {count, total} = totals();
+      if(count > 0) bar.classList.remove('d-none'); else bar.classList.add('d-none');
+      elCount.textContent = count;
+      elTotal.textContent = fmt(total);
+    }
+
+    function renderModal(){
+      list.innerHTML = '';
+      Object.values(cart).forEach(p => {
+        if(p.qty > 0){
+          const li = document.createElement('li');
+          li.className = 'list-group-item';
+          li.style.background = '#16181d';
+          li.style.color = '#f2f4f7';
+          li.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <div class="fw-semibold">${p.name}</div>
+                <div class="small text-secondary">x${p.qty} · ${fmt(p.price)}</div>
+              </div>
+              <div class="fw-semibold">${fmt(p.qty * p.price)}</div>
+            </div>`;
+          list.appendChild(li);
+        }
+      });
+      elTotalModal.textContent = fmt(totals().total);
+    }
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.dc-qty .btn');
+      if(!btn) return;
+      const item = btn.closest('.dc-item');
+      if(!item) return;
+
+      const id = item.dataset.id;
+      const name = item.dataset.name;
+      const price = parseFloat(item.dataset.price);
+      if(!cart[id]) cart[id] = { id, name, price, qty: 0 };
+
+      const valueEl = item.querySelector('.dc-qty .value');
+      let qty = cart[id].qty || 0;
+      if(btn.classList.contains('plus')) qty++;
+      if(btn.classList.contains('minus')) qty = Math.max(0, qty - 1);
+      cart[id].qty = qty;
+      valueEl.textContent = qty;
+
+      save();
+      renderBar();
+    });
+
+    document.getElementById('cart-clear').addEventListener('click', () => {
+      cart = {};
+      save(); syncQuantitiesFromDOM(); renderBar();
+    });
+
+    document.getElementById('cartModal').addEventListener('show.bs.modal', renderModal);
+
+    // Confirmar compra
+    document.getElementById('cart-confirm').addEventListener('click', () => {
+      alert('¡Gracias! Tu compra ha sido existosa.\nPuedes pasar a caja a retirar.');
+      cart = {};
+      save(); syncQuantitiesFromDOM(); renderBar();
+      bootstrap.Modal.getInstance(document.getElementById('cartModal')).hide();
+    });
+
+    document.querySelectorAll('.dc-filters .btn').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.dc-filters .btn').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter; // all | palomitas | nachos | hotdogs | bebidas | dulces
+        document.querySelectorAll('.dc-col').forEach(col=>{
+          col.style.display = (f === 'all' || col.dataset.category === f) ? '' : 'none';
+        });
+      });
+    });
+
+    syncQuantitiesFromDOM();
+    renderBar();
+  })();
+  </script>
+</body>
+</html>

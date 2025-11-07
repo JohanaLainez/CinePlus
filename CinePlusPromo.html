@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CinePlus</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="StylePromociones.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Cine<span class="dot">Plus</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="Informacion%20de%20Pelicula.html#cartelera">Cartelera</a></li>
+          <li class="nav-item"><a class="nav-link" href="estrenos.html#estrenos.html">Próximos estrenos</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="CinePlusPromo.html">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="dulceria.html">Dulcería</a></li>
+          <li class="nav-item"><a class="nav-link" href="CinePlus_completo.html#historia">Historia</a></li>
+          <li class="nav-item"><a class="nav-link" href="CinePlus_completo.html#contacto">Contacto</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-brand btn-sm" href="Informacion%20de%20Pelicula.html#cartelera">Comprar boletos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ====== PROMOCIONES ====== -->
+    <section id="promos" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Promociones</h2>
+        <p class="section-sub">Aprovecha las mejores ofertas en boletos, comida y más.</p>
+
+        <!-- === 1) Entradas === -->
+        <div class="promo-block mb-5">
+          <div class="d-flex align-items-end justify-content-between mb-3">
+            <h3 class="h4 m-0">Promociones de entradas</h3>
+            <div class="small text-secondary">Boletos a mejor precio</div>
+          </div>
+
+          <div id="carruselEntradas" class="carousel slide promo-carousel" data-bs-ride="carousel" data-bs-interval="7000">
+            <div class="carousel-inner">
+
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="row g-4">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/2x1.png" alt="Miércoles 2x1 en entradas" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Miércoles 2x1</h5>
+                        <p class="card-text">Compra un boleto y el segundo va por cuenta de la casa en funciones 2D seleccionadas.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Estudiantes.png" alt="Descuento estudiante en la noche" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Estudiante</h5>
+                        <p class="card-text">20% de descuento mostrando tu carné de estudiante vigente.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Pareja2D.png" alt="Promo pareja 2D" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Pareja 2D</h5>
+                        <p class="card-text">2 boletos 2D con 15% de descuento al mostrar sus anillos de boda.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Matine.png" alt="Tarifa matiné" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Matiné</h5>
+                        <p class="card-text">Tarifa reducida 10% en funciones antes de las 2:00 pm de lunes a viernes.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Estrenofan.png" alt="Estreno fan con póster" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Estreno Fan</h5>
+                        <p class="card-text">Boleto + póster coleccionable en primeras funciones en películas de estreno (hasta agotar existencias).</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/ButacaPlus.png" alt="Butaca plus descuento" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Butaca Plus</h5>
+                        <p class="card-text">Upgrade a Butaca Plus con 20% de descuento.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/KidsTime.png" alt="Niños a mitad de precio" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">KidTime</h5>
+                        <p class="card-text">Niños menores de 10 años a mitad de precio los domingos por la mañana.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Compraonline.png" alt="Descuento por compra online" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Compra Online</h5>
+                        <p class="card-text">-10% en tu boleto al comprar en línea.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselEntradas" data-bs-slide="prev" aria-label="Anterior">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselEntradas" data-bs-slide="next" aria-label="Siguiente">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- === 2) Comida === -->
+        <div class="promo-block mb-5">
+          <div class="d-flex align-items-end justify-content-between mb-3">
+            <h3 class="h4 m-0">Promociones de comida</h3>
+            <div class="small text-secondary">Snacks y bebidas</div>
+          </div>
+
+          <div id="carruselComida" class="carousel slide promo-carousel" data-bs-ride="carousel" data-bs-interval="7000">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <div class="row g-4">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/ComboClasico.png" alt="Combo clásico" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Combo Clásico</h5>
+                        <p class="card-text">Pop corn grande + 2 sodas medianas a $5.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Nachosprom.png" alt="Nachos y bebida" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">NachoLocura</h5>
+                        <p class="card-text">Orden de nachos + bebida grande a $4.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/DuoHotdog.png" alt="Dúo de hot dogs" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Hot-Duo</h5>
+                        <p class="card-text">2 hot dogs + 2 bebidas medianas a $6.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/DulceMix.png" alt="Dulces variados" loading="lazy">
+                        <span class="badge promo-badge">Endulza</span>
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Dulce Mix</h5>
+                        <p class="card-text">2 chocolates + palomitas caramelizadas medianas y una bebida mediana a $7.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Kidstoy.png" alt="Kids Box" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Kids Box</h5>
+                        <p class="card-text">Palomitas chicas + jugo + juguete a $4.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/MegaComboNachos.png" alt="Mega Combo Nachos" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Mega Combo Nachos</h5>
+                        <p class="card-text">Dos palomitas grandes, dos nachos y dos bebidas grandes a $16.50.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Paracompartir%202.png" alt="Combo Compartir para 2" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Combo Compartir para 2</h5>
+                        <p class="card-text">Dos popcorn medianos, dos sodas grandes, un nacho, un hot dog y un chocolate Hershey a $19.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Maxicombo.png" alt="Maxi Combo Hot Dog" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Maxi Combo Hot Dog</h5>
+                        <p class="card-text">Palomitas XL, dos hot dogs y dos bebidas grandes por $19.99.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselComida" data-bs-slide="prev" aria-label="Anterior">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselComida" data-bs-slide="next" aria-label="Siguiente">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- === 3) Rachas de TikTok y Redes === -->
+        <div class="promo-block mb-5">
+          <div class="d-flex align-items-end justify-content-between mb-3">
+            <h3 class="h4 m-0">Promociones de rachas de TikTok y Redes</h3>
+            <div class="small text-secondary">Beneficios por streaks y actividades en tus redes favoritas</div>
+          </div>
+
+          <div id="carruselRachas" class="carousel slide promo-carousel" data-bs-ride="carousel" data-bs-interval="7000">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <div class="row g-4">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Streak25.png" alt="Streak 25 días" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Streak 25</h5>
+                        <p class="card-text">Muestra 25 días consecutivos de racha y obtén bebida mediana gratis.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Streak50.png" alt="Streak 50 días" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Streak 50</h5>
+                        <p class="card-text">Muestra 50 días consecutivos de racha y obtén orden de nachos gratis.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Streak100.png" alt="Streak 100 días" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Streak 100</h5>
+                        <p class="card-text">Muestra 100 días consecutivos de racha y obtén un hot dog gratis.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Streak150.png" alt="Streak 150 días" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Streak 150</h5>
+                        <p class="card-text">Muestra 150 días consecutivos de racha y obtén 2 chocolates Hershey’s gratis.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row g-4">
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Streak200.png" alt="Streak 200 días" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Streak 200</h5>
+                        <p class="card-text">Muestra 200 días consecutivos de racha y obtén una palomita M y su bebida M gratis.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Streak250.png" alt="Streak 250 días" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Streak 250</h5>
+                        <p class="card-text">Muestra 250 días consecutivos de racha y obtén una palomita XL y su bebida L gratis.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/Redes.png" alt="Sigue nuestras redes" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Sigue nuestras redes</h5>
+                        <p class="card-text">Síguenos en nuestras redes sociales y participa semanalmente en rifas de pases dobles.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card promo-card h-100">
+                      <div class="promo-thumb">
+                        <img src="img/llaveros.png" alt="Comparte el estreno" loading="lazy">
+                      </div>
+                      <div class="p-3">
+                        <h5 class="card-title">Comparte el estreno</h5>
+                        <p class="card-text">Comparte una historia en la alfombra del estreno y llévate un llavero temático.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carruselRachas" data-bs-slide="prev" aria-label="Anterior">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carruselRachas" data-bs-slide="next" aria-label="Siguiente">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ====== CONTACTO ====== -->
+        <section id="contacto">
+          <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-sub">Escríbenos.</p>
+            <div class="row g-4">
+              <div class="col-12 col-lg-7">
+                <div class="card p-4">
+                  <form>
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Tu nombre" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="tu@correo.com" required>
+                      </div>
+                      <div class="col-12">
+                        <label for="mensaje" class="form-label">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Cuéntanos en qué te ayudamos" required></textarea>
+                      </div>
+                      <div class="col-12 d-grid">
+                        <button type="submit" class="btn btn-brand btn-lg">Enviar</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-5">
+                <div class="card p-4 h-100">
+                  <h5 class="mb-3">CinePlus – Sucursal Metrocentro San Salvador</h5>
+                  <p class="small text-secondary mb-1">Calle Los Sisimiles, San Salvador, El Salvador</p>
+                  <p class="small text-secondary mb-1">Tel. (503) 2261 2001</p>
+                  <p class="small text-secondary">Horario: 10:00 am a 11:00 pm</p>
+
+                  <iframe
+                    title="Mapa"
+                    style="border:0; width:100%; height:220px"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.2177176072837!2d-89.21692351485673!3d13.705259664045563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f63318d9d3a541f%3A0xb4fd23f2dbb00fb5!2sCinemark%20%E2%80%A2%20Metrocentro%20San%20Salvador!5e0!3m2!1ses-419!2ssv!4v1758921548076!5m2!1ses-419!2ssv">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Botón volver (dentro del flujo) -->
+        <div class="text-end mt-5">
+          <a href="CinePlus_completo.html" class="btn btn-outline-light">← Volver al inicio</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <div>© <span id="y"></span> CinePlus • Todos los derechos reservados</div>
+      <div class="small">Términos · Privacidad</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
