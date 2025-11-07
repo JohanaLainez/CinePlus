@@ -14,7 +14,6 @@
   font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-/* ====== Navbar (como dulcería) ====== */
 .navbar{
   background: rgba(15,15,17,.92);
   backdrop-filter: blur(8px);
